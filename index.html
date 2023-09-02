@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error</title>
+  <title>Error Manga</title>
   <!--Icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!--style css-->
   <link rel="stylesheet" href="style.css">
   
 </head>
-<body>
-  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-900 h-screen w-[360px] text-slate-50" >
+<body class="flex flex-col">
+  <section id="carrinho" class="fixed top-0 right-[-360px] bg-slate-900 h-screen w-[360px] text-slate-50 z-40 " >
 <div id="cabecalho-carrinho" class="flex  justify-between m-4">
   <p>Meu carinho</p>
-  <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark"></i></button>
+  <button id="fechar-carrinho"><i class="fa-solid fa-circle-xmark  text-xl"></i></button>
 </div>
 <section id="Produtos-carinhos" class="p-3">
   <p>One Piece</p>
@@ -28,20 +28,20 @@
 
  </section> 
 
-  <header class="flex  bg-slate-950	 justify-between h-[100px]"><!--Cabeçario-->
-    <img src="assets/img/LogoSite.png" alt="Logo_ecommece_Manga" class="Logo_manga ml-10">
-    <div class="text-slate-50	flex gap-2 items-end mx-2  ">
-      <button><i class="fa-solid fa-user"></i></button>
- <button id="abrirCarrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+  <header class="flex  bg-slate-950	 justify-between h-[100px] sticky top-0 shadow-lg shadow-slate-300"><!--Cabeçario-->
+    <img src="assets/img/LogoSite.png" alt="Logo_ecommece_Manga" class="Logo_manga ml-10 my-1">
+    <div class="text-slate-50	flex gap-2 items-end mx-2  p-3">
+      <button><i class="fa-solid fa-user text-xl mx-2"></i></button>
+ <button id="abrirCarrinho"><i class="fa-solid fa-cart-shopping text-xl mx-2"></i></button>
     </div>
   </header>
 
-  <main><!--parte pricipal da pagina-->
-    <section id="container-produto" class="flex flex-wrap"><!--apenas usar o felx ele vai se esforçar para todo elemeto ficar um do aldo do outro ate amssado eles entçao vamos usar outra class para deixar que quebre a linha-->
+  <main class="flex items-center justify-items-center"><!--parte pricipal da pagina-->
+    <section id="container-produto" class="flex flex-wrap justify-center p-6 gap-5"><!--apenas usar o felx ele vai se esforçar para todo elemeto ficar um do aldo do outro ate amssado eles entçao vamos usar outra class para deixar que quebre a linha-->
      
-    </section><!--sessão -->
+    </section><!--sessão --> 
   </main>
-  
+ 
   <script type="module" src="script.js"></script><!--Estou explicado que ele vai trabalhar com logica de codigo modular -->
 </body>
 </html>

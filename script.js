@@ -83,7 +83,7 @@ const catalogo = [
 for(const produtoCatalogo of catalogo){// como se fosse uma variavel ansiliar aqui, of é uma preposição em igles significa do de , para cada item da minha lista, agora qui dentro vamo informar oque ele vai fazer 
 
     
-const cardProduto = `<div id="card-produto-${produtoCatalogo.id}}" class='border-solid border-2  w-48 m-2 p-2 '><!--serve para fazer divisão não setamatico-->
+const cardProduto = `<div id="card-produto-${produtoCatalogo.id}" class='border-solid border-2  w-48 m-2 p-2 flex justify-items-center flex-col'><!--serve para fazer divisão não setamatico-->
 <img src="./assets/img/${produtoCatalogo.nomeImg}" alt="${produtoCatalogo.altProduto}"/>
 <p class='nameProduto'>${produtoCatalogo.nome} - volume:${produtoCatalogo.volume}</p>
 <p>${produtoCatalogo.encadernacao}</p>
