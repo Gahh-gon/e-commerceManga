@@ -1,6 +1,6 @@
 export const catalogo = [
     {
-        id:1,
+        id:'1',
         nome:'One Piece',
         volume:180,
         encadernacao:'Encadernação Clássica',
@@ -9,7 +9,7 @@ export const catalogo = [
         altProduto:'produto 1 imagem manga de one piece'
     },
     {
-        id:2,
+        id:'2',
         nome:'Jujutsu Kaisen: Batalha De Feiticeiros',
         volume: 22,
         encadernacao:'',
@@ -18,7 +18,7 @@ export const catalogo = [
         altProduto:'produto 2 imagem manga de Jujutsu Kaisen'
     },
     {
-        id:3,
+        id:'3',
         nome:'Zom 100 - Coisas para fazer antes de virar zumbi',
         volume: 1,
         encadernacao:'',
@@ -27,7 +27,7 @@ export const catalogo = [
         altProduto:'produto 3 imagem manga de Zom 100'
     },
     {
-        id:4,
+        id:'4',
         nome:'Spy X Family',
         volume: 2,
         encadernacao:'',
@@ -36,7 +36,7 @@ export const catalogo = [
         altProduto:'produto 4 imagem manga de Spy X Family '
     },
     {
-        id:5,
+        id:'5',
         nome:'Cavaleiros do Zodiaco The Lost Canvas Gaiden Especial',
         volume: 8,
         encadernacao:'',
@@ -45,7 +45,7 @@ export const catalogo = [
         altProduto:'produto 5 imagem manga de Cavaleiros do Zodiaco The Lost Canvas Gaiden Especial '
     },
     {
-        id:6,
+        id:'6',
         nome:'Berserk',
         volume: 2,
         encadernacao:'',
@@ -55,7 +55,7 @@ export const catalogo = [
         altProduto:'produto 6 imagem manga de Berserk '
     },
     {
-        id:7,
+        id:'7',
         nome:'Blue Lock',
         volume: 2,
         encadernacao:'',
@@ -64,7 +64,7 @@ export const catalogo = [
         altProduto:'produto 7 imagem manga de Blue Lock '
     },
     {
-        id:8,
+        id:'8',
         nome:'Gokushufudou - Tatsu Imortal',
         volume: 1,
         encadernacao:'',
