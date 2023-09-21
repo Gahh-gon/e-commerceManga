@@ -34,9 +34,61 @@ idPrComQtd[idProduto]++;
 atuaInfQt(idProduto)
 }
 function decreQtdPr(idProduto) {
+  if(idPrComQtd[idProduto] >= 0){
+    removerPr(idProduto);
+    return;
+  }
   idPrComQtd[idProduto]--;
   atuaInfQt(idProduto)
+ 
   }
+  function removerPr(idProduto){
+   delete idPrComQtd[idProduto];//apagamos esse campo  
+   renderizarPrCarr()
+   
+  }
+  function renderizarPrCarr(){
+    const containerProdutoCarrinho = document.querySelector('#Produtos-carinhos');
+    containerProdutoCarrinho.innerHTML = '';
+    for(const idProduto in idPrComQtd){
+      DesenharNoCarr(idProduto)
+    }
+   
+  }
+  function DesenharNoCarr(idProduto){
+
+    const produto = catalogo.find((p) => p.id === idProduto)// find e ache, vamo achar um produto inpaticular  => tal que esses produto tenha um id ingual produto idProduto, então quem chamr essa função tem que passar seu id e iram isar esses id pegar intens do catalogo 
+    const containerProdutoCarrinho = document.querySelector('#Produtos-carinhos');
+  const ElemArti = document.createElement('article'); // criando um  elemento html 
+  
+  const ElemArtiClasses = ['flex','bg-slate-100','rounded-lg','p-1','relative'];
+  
+  for(const articleclass of ElemArtiClasses){
+  ElemArti.classList.add(articleclass);
+  
+  } 
+  const cartaoProdutoCarinho = ` <button id="remover-${produto.id}" class=" absolute top-0 right-2"><i class="fa-solid fa-circle-xmark  text-xl text-slate-600 hover:text-slate-900"></i></button>
+      <img src="./assets/img/${produto.nomeImg}" alt="Produto adicionado como nome de: ${produto.altProduto}" class="h-24 rounded-lg">
+    <div class="p-3 px flex flex-col justify-between ">
+        <p class="text-slate-900 text-sm">${produto.nome}</p>
+      <p class="text-green-700 text-lg">$${produto.precoProduto}</p>
+      </div>
+      <div class='flex text-slate-950 items-end absolute bottom-0 right-2 gap-2 text-lg'>
+        <button id='descrePr${produto.id}'>-</button>
+        <p id='qtd-${produto.id}'>${idPrComQtd[produto.id]}</p>
+        <button id='increPr${produto.id}'>+</button>
+      </div>
+    `;
+  
+  ElemArti.innerHTML = cartaoProdutoCarinho;// agora cada cart esta cuidado de si mesmo agora oque esta  sendo apagado é criando é seu conteundo não todo ele não vai dar o erro de antes 
+     containerProdutoCarrinho.appendChild(ElemArti)
+     document.querySelector(`#descrePr${produto.id}`).addEventListener('click', ()=> decreQtdPr(produto.id))
+     document.querySelector(`#increPr${produto.id}`).addEventListener('click',()=> increQtdPr(produto.id))
+     document.querySelector(`#remover-${produto.id}`).addEventListener('click', ()=>removerPr(produto.id))
+     
+  }
+  
+  
  
 export function addCarinho(idProduto){
   if(idProduto in idPrComQtd){//in existe no objeto
@@ -46,23 +98,6 @@ return// sair da função
   }
   //agora não temos prdutos   repetidos
   idPrComQtd[idProduto] = 1 // o proprio js esta criando para mim um propriedade 
-  const produto = catalogo.find((p) => p.id === idProduto)// find e ache, vamo achar um produto inpaticular  => tal que esses produto tenha um id ingual produto idProduto, então quem chamr essa função tem que passar seu id e iram isar esses id pegar intens do catalogo 
-  const containerProdutoCarrinho = document.querySelector('#Produtos-carinhos');
+  DesenharNoCarr(idProduto)
 
-    const cartaoProdutoCarinho =
-`<article class="flex bg-slate-100 rounded-lg p-1 relative">
-    <button id="fechar-produto" class=" absolute top-0 right-2"><i class="fa-solid fa-circle-xmark  text-xl text-slate-600 hover:text-slate-900"></i></button>
-    <img src="./assets/img/${produto.nomeImg}" alt="Produto adicionado como nome de: ${produto.altProduto}" class="h-24 rounded-lg">
-  <div class="p-3 px flex flex-col justify-between ">
-      <p class="text-slate-900 text-sm">${produto.nome}</p>
-    <p class="text-green-700 text-lg">$${produto.precoProduto}</p>
-    </div>
-    <div class='flex text-slate-950 items-end absolute bottom-0 right-2 gap-2 text-lg'>
-      <button>-</button>
-      <p id='qtd-${produto.id}'>${idPrComQtd[produto.id]}</p>
-      </button>+<button>
-    </div>
-   </article>`;
-   
-   containerProdutoCarrinho.innerHTML += cartaoProdutoCarinho
-}
+  }
